@@ -6,7 +6,7 @@ Public Class Form1
         Dim Conn As New SqlConnection
         Dim cmd As New SqlCommand
 
-        Conn.ConnectionString = "Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\Chathuranga\AppData\Local\Temporary Projects\WindowsApplication1\StudentBase.mdf;Integrated Security=True;User Instance=True"
+        Conn.ConnectionString = "Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\Chathuranga\Desktop\Projects\Created Apps\Visual Basic App\Database Connection\Database Connection\StudentBase.mdf;Integrated Security=True;User Instance=True"
         Conn.Open()
         cmd.Connection = Conn
         cmd.CommandText = "INSERT INTO StudentInfo(Name,Age) Values(@Name,@Age);"
@@ -16,11 +16,22 @@ Public Class Form1
         Conn.Close()
     End Sub
 
-    Private Sub TextBox2_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles TextBoxAge.TextChanged
+    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
+        Dim Conn As New SqlConnection
+        Dim cmd As New SqlCommand
 
-    End Sub
+        Conn.ConnectionString = "Data Source=.\SQLEXPRESS;AttachDbFilename=C:\Users\Chathuranga\Desktop\Projects\Created Apps\Visual Basic App\Database Connection\Database Connection\StudentBase.mdf;Integrated Security=True;User Instance=True"
+        Conn.Open()
+        cmd.Connection = Conn
+        cmd.CommandText = "SELECT * FROM StudentInfo;"
 
-    Private Sub Label2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Label2.Click
+        Dim reader As SqlDataReader
+        reader = cmd.ExecuteReader()
 
+        While reader.Read()
+            MsgBox(reader("Name"))
+        End While
+        reader.Close()
+        Conn.Close()
     End Sub
 End Class

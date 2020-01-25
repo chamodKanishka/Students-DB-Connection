@@ -27,6 +27,7 @@ Partial Class Form1
         Me.Label1 = New System.Windows.Forms.Label
         Me.Label2 = New System.Windows.Forms.Label
         Me.TextBoxAge = New System.Windows.Forms.TextBox
+        Me.Button2 = New System.Windows.Forms.Button
         Me.SuspendLayout()
         '
         'Button1
@@ -70,11 +71,21 @@ Partial Class Form1
         Me.TextBoxAge.Size = New System.Drawing.Size(100, 20)
         Me.TextBoxAge.TabIndex = 3
         '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(89, 180)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(75, 23)
+        Me.Button2.TabIndex = 5
+        Me.Button2.Text = "Retrive"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBoxAge)
         Me.Controls.Add(Me.Label1)
@@ -91,5 +102,6 @@ Partial Class Form1
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents TextBoxAge As System.Windows.Forms.TextBox
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 
 End Class
